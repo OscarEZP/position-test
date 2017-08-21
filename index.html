@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Archivos</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-3">
+
+            <h1 class="display-4 title">Test para contabilizar archivos</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="form-group">
+                <label for="url">Ingrese una URL</label>
+                <input type="text" class="form-control" id="url">
+                <span class="fa fa-question" data-toggle="tooltip" data-placement="right" title="Ingrese una URL p.e: http://www.example.com" id="question-icon"></span>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <button class="btn btn-primary btn-block" id="send-form-url">Consultar</button>
+        </div>
+    </div>
+</div>
+
+<div id="list">
+    <div class="row">
+        <div class="col-4 offset-1">
+            <h1 class="display-4 title">Lista de resultados anteriores</h1>
+            <div class="result-list"></div>
+        </div>
+        <div class="col-6 offset-1">
+            <h1 class="display-4 title">Resultado actual</h1>
+            <div class="col-6">
+
+                <div class="form-group">
+                    <label for="img-cant">Cantidad de imagenes</label>
+                    <input type="text" class="form-control" id="img-cant">
+                </div>
+            </div>
+            <div class="col-6">
+
+                <div class="form-group">
+                    <label for="css_cant">Cantidad de archivos css</label>
+                    <input type="text" class="form-control" id="css_cant">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+<script src="main.js"></script>
+</body>
+</html>
