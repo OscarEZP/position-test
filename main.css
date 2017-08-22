@@ -5,7 +5,10 @@
     position: relative;
 }
 
-
+#page_2{
+    margin-top: 40px;
+    position: relative;
+}
 #question-icon{
     position: absolute;
     bottom: 27px;

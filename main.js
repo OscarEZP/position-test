@@ -22,6 +22,11 @@ $(document).ready(function () {
 
         event.preventDefault();
 
+        if(!is_url($('#url').val())){
+            alertify.alert('Error!', 'ha ocurrido un error, intente con un enlace diferente', function(){ });
+            return;
+        }
+
         $.get($('#url').val(), function(data) {
 
             var imgs = $('<div/>').html(data).find('img');
@@ -61,7 +66,7 @@ $(document).ready(function () {
 
             if(xhr.statusText == 'error'){
 
-                alertify.alert('Error al consultar enlace.', 'ha ocurrido un error, intente con un enlace diferente', function(){ });
+                alertify.alert('Error al consultar enlace.', 'No Access-Control-Allow-Origin', function(){ });
 
             }
         });
@@ -74,7 +79,7 @@ $(document).ready(function () {
     database.ref('urls/').on('value', function (snap) {
 
         $('.result-list').empty();
-        console.log(snap.numChildren());
+
         snap.forEach(function (urlSnaps) {
 
             $('.result-list').append('<div class="list-group"><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
@@ -95,4 +100,16 @@ $(document).ready(function () {
 
 
 });
+
+function is_url(str) {
+
+    //Declaramos la expresión regular que se usará para validar la url pasada por parámetro
+
+    var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+
+    //Retorna true en caso de que la url sea valida o false en caso contrario
+
+    return regexp.test(str);
+
+}
 
